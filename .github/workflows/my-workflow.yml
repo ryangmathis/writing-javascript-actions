@@ -16,6 +16,7 @@ jobs:
 
       - name: jokes
         uses: ./.github/actions/joke-action
+        default: "Yo mama joke"
 
       - name: create-issue
         uses: ./.github/actions/issue-maker
