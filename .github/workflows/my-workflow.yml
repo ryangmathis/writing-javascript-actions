@@ -14,5 +14,11 @@ jobs:
       - name: hello-action
         uses: ./.github/actions/hello-world
 
-      - name: ha-ha
+      - name: jokes
         uses: ./.github/actions/joke-action
+
+      - name: create-issue
+        uses: ./.github/actions/issue-maker
+        with:
+          repo-token: ${{secrets.GITHUB_TOKEN}}
+          joke: ${{ steps.joke-action.outputs.joke-output }}
